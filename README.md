@@ -1,1 +1,3 @@
-Ce programme c'est pour faire le jeu de nim à deux variantes
+Ce programme permet de jouer à deux variantes du jeu de Nim :
+*variante simple;
+*variante de Marienbad.
