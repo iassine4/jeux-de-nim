@@ -65,18 +65,16 @@ def main():
 		# le joueur qui a pris (perd)
 		if pile == 0:
 			print(f"{current_match} a pris la dernière allumette et a PERDU.")
+
 			# l'autre joueur gagne
-			if current_match == p2:
-				winner = p1
-			else:
-				winner = p2
-				print(f"{winner} est le gagnant !")
-				break
-			# changer de joueur
-			if current_match == p2:
-				current_match = p1
-			else:
-				current_match = p1
+			winner = p1 if current_match == p2 else p2
+			print(f"{winner} est le gagnant !")
+			break
+		# changer de joueur
+		if current_match == p2:
+			current_match = p1
+		else:
+			current_match = p1
 
 
 if __name__ == "__main__":
