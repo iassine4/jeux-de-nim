@@ -11,7 +11,7 @@ max_removed_pil = 4
 
 
 def name_of_player(player):
-	"""Demande le nom d'un joueur."""
+	"""Demander le nom d'un joueur."""
 	while True:
 		name = input(player).strip()
 		if name:
@@ -22,9 +22,9 @@ def name_of_player(player):
 def choice_player(p1, p2):
 	"""Demande quel joueur commence (p1 ou p2).
 	 	Renvoie le nom choisi."""
-	player = f"Qui commence ? ({p1}/{p2}) : "
+	msg = f"Qui commence ? ({p1}/{p2}) : "
 	while True:
-		choice = input(player).strip()
+		choice = input(msg).strip()
 		if choice == p1:
 			return p1
 		if choice == p2:
@@ -58,6 +58,7 @@ def main():
 
 	pile = init_pile
 	# boucle principale du jeu
+	print(current_match)
 	while pile > 0:
 		k = start_match(current_match, pile)
 		pile -= k
@@ -68,13 +69,15 @@ def main():
 
 			# l'autre joueur gagne
 			winner = p1 if current_match == p2 else p2
-			print(f"{winner} est le gagnant !")
+			print(f"{winner} GAGNE !")
 			break
 		# changer de joueur
 		if current_match == p2:
 			current_match = p1
+			print(f"{current_match}, à vous de jouer.")
 		else:
-			current_match = p1
+			current_match = p2
+			print(f"{current_match}, à vous de jouer.")
 
 
 if __name__ == "__main__":
